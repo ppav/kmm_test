@@ -1,0 +1,32 @@
+@startuml
+agent shared [
+ <b>shared
+ //multiplatform//
+ ]
+
+agent sample_ios [
+ <b>sample_ios
+ //ios//
+]
+
+agent sample_android [
+ <b>sample_android
+ //android//
+]
+agent spacex #line:red;line.bold [
+  <b>spacex
+  //jvm//
+]
+
+agent dragon [
+  <b>dragon
+  //jvm//
+]
+
+
+dragon --> spacex
+shared --> sample_android
+shared --> sample_ios
+shared --> spacex
+spacex --> sample_android
+@enduml
