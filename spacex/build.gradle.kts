@@ -1,11 +1,18 @@
 plugins {
-  kotlin("jvm")
+  kotlin("multiplatform")
 }
 
 
 kotlin {
-  dependencies {
-    api(project(":shared"))
-    api(project(":dragon"))
+  jvm()
+  sourceSets {
+    val commonMain by getting
+    val jvmMain by getting {
+      dependsOn(commonMain) // May not be necessary.
+      dependencies {
+        api(project(":shared"))
+        api(project(":dragon"))
+      }
+    }
   }
 }

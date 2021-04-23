@@ -4,8 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.share.Greeting
 import android.widget.TextView
-import com.share.Platform
-//import com.spacex.SpaceXPlatform
+import com.spacex.SpaceXPlatform
 
 class MainActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,10 +13,7 @@ class MainActivity : AppCompatActivity() {
     setContentView(R.layout.activity_main)
 
     findViewById<TextView>(R.id.text_view).apply {
-//      text = Greeting().greeting(SpaceXPlatform())
-      text = Greeting().greeting(object: Platform {
-        override fun platform() = "test"
-      })
+      text = Greeting().greeting(SpaceXPlatform())
     }
   }
 }
